@@ -1,0 +1,122 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "RPN Calculator API",
+    "version": "1.0.0",
+    "title": "RPN Calculator"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "stack",
+      "description": "Operations on the stack"
+    }
+  ],
+  "paths": {
+    "/stack": {
+      "post": {
+        "tags": ["stack"],
+        "summary": "Add an element to the stack",
+        "parameters": [
+          {
+            "name": "element",
+            "in": "body",
+            "description": "Element to add",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "element": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Element added"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      },
+      "get": {
+        "tags": ["stack"],
+        "summary": "Get the current stack",
+        "responses": {
+          "200": {
+            "description": "Current stack"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["stack"],
+        "summary": "Clear the stack",
+        "responses": {
+          "200": {
+            "description": "Stack cleared"
+          }
+        }
+      }
+    },
+    "/stack/add": {
+      "post": {
+        "tags": ["stack"],
+        "summary": "Perform addition",
+        "responses": {
+          "200": {
+            "description": "Addition performed"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/stack/subtract": {
+      "post": {
+        "tags": ["stack"],
+        "summary": "Perform subtraction",
+        "responses": {
+          "200": {
+            "description": "Subtraction performed"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/stack/multiply": {
+      "post": {
+        "tags": ["stack"],
+        "summary": "Perform multiplication",
+        "responses": {
+          "200": {
+            "description": "Multiplication performed"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/stack/divide": {
+      "post": {
+        "tags": ["stack"],
+        "summary": "Perform division",
+        "responses": {
+          "200": {
+            "description": "Division performed"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    }
+  }
+}
